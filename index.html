@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leah Sharma — EE @ McMaster</title>
+  <meta name="description" content="Electrical Engineering student at McMaster University building sensors, PCBs, and embedded systems for things that move." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NOISE OVERLAY -->
+  <div class="noise"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">⚡ <span>Leah Sharma</span></a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <canvas id="circuitCanvas"></canvas>
+    </div>
+    <div class="hero-content">
+      <div class="hero-tag">⚡ Available for Summer 2026</div>
+      <h1 class="hero-title">
+        <span class="line1">[Your Name]</span>
+        <span class="line2">Electrical <em>Engineer</em></span>
+      </h1>
+      <p class="hero-sub">
+        Building <strong>sensors, PCBs, and embedded systems</strong> for vehicles that move.<br/>
+        McMaster University · Class of 2027
+      </p>
+      <div class="hero-chips">
+        <span class="chip">Altium Designer</span>
+        <span class="chip">Embedded C/C++</span>
+        <span class="chip">Analog Circuits</span>
+        <span class="chip">BLE / UART / I²C</span>
+        <span class="chip">Baja SAE</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="resume.pdf" class="btn btn-ghost" target="_blank">Resume ↗</a>
+      </div>
+    </div>
+    <div class="hero-scroll">scroll ↓</div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">01 / Projects</span>
+        <h2 class="section-title">Featured Work</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- ESP32 RC Car -->
+        <article class="project-card card-featured" data-project="rccar">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon">🚗</div>
+            <div class="card-badges">
+              <span class="badge badge-orange">PCB Design</span>
+              <span class="badge badge-pink">Embedded</span>
+              <span class="badge badge-blue">BLE</span>
+            </div>
+          </div>
+          <h3 class="card-title">ESP32 BLE RC Car</h3>
+          <p class="card-desc">Custom PCB with ESP32, DRV8847 dual H-bridge, linear servo steering, DC drive motor, and LiPo power. Fully custom BLE firmware — no off-the-shelf RC electronics.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-label">MCU</span><span class="spec-val">ESP32</span></div>
+            <div class="spec"><span class="spec-label">Driver</span><span class="spec-val">DRV8847</span></div>
+            <div class="spec"><span class="spec-label">Control</span><span class="spec-val">BLE GATT</span></div>
+            <div class="spec"><span class="spec-label">Power</span><span class="spec-val">LiPo</span></div>
+          </div>
+          <button class="card-btn" onclick="openProject('rccar')">View Details →</button>
+        </article>
+
+        <!-- Torque Sensor -->
+        <article class="project-card" data-project="torque">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon">⚙️</div>
+            <div class="card-badges">
+              <span class="badge badge-yellow">Hardware</span>
+              <span class="badge badge-orange">Analog</span>
+            </div>
+          </div>
+          <h3 class="card-title">Custom Steering Torque Sensor</h3>
+          <p class="card-desc">Full-bridge strain gauge array + MCP6002 amplifier PCB for real-time steering torque measurement on a Baja SAE vehicle. Calibrated to 1 mV/ft·lb.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-label">Sensitivity</span><span class="spec-val">1 mV/ft·lb</span></div>
+            <div class="spec"><span class="spec-label">Circuit</span><span class="spec-val">Wheatstone bridge</span></div>
+            <div class="spec"><span class="spec-label">Amp</span><span class="spec-val">MCP6002</span></div>
+          </div>
+          <button class="card-btn" onclick="openProject('torque')">View Details →</button>
+        </article>
+
+        <!-- Modular Motherboard -->
+        <article class="project-card" data-project="pcb">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon">🔌</div>
+            <div class="card-badges">
+              <span class="badge badge-green">PCB Design</span>
+              <span class="badge badge-yellow">Hardware</span>
+            </div>
+          </div>
+          <h3 class="card-title">Modular Motherboard Redesign</h3>
+          <p class="card-desc">Redesigned the Baja SAE monolithic ECU into a modular platform with plug-in sensor modules and 3 regulated power rails. Sensor swaps from hours to minutes.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-label">MCU</span><span class="spec-val">Teensy</span></div>
+            <div class="spec"><span class="spec-label">Rails</span><span class="spec-val">12V / 5V / 3.3V</span></div>
+            <div class="spec"><span class="spec-label">Tool</span><span class="spec-val">Altium Designer</span></div>
+          </div>
+          <button class="card-btn" onclick="openProject('pcb')">View Details →</button>
+        </article>
+
+        <!-- 3D Scanner -->
+        <article class="project-card" data-project="scanner">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon">📡</div>
+            <div class="card-badges">
+              <span class="badge badge-blue">Embedded C</span>
+              <span class="badge badge-purple">MATLAB</span>
+            </div>
+          </div>
+          <h3 class="card-title">3D Spatial Scanner</h3>
+          <p class="card-desc">VL53L1X ToF sensor on a stepper motor controlled by MSP432. Full C firmware with UART pipeline to a MATLAB 3D point cloud renderer. Datasheet included.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-label">MCU</span><span class="spec-val">MSP432</span></div>
+            <div class="spec"><span class="spec-label">Sensor</span><span class="spec-val">VL53L1X ToF</span></div>
+            <div class="spec"><span class="spec-label">Viz</span><span class="spec-val">MATLAB 3D</span></div>
+          </div>
+          <button class="card-btn" onclick="openProject('scanner')">View Details →</button>
+        </article>
+
+        <!-- Guitar Pedal -->
+        <article class="project-card" data-project="pedal">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon">🎸</div>
+            <div class="card-badges">
+              <span class="badge badge-pink">Analog</span>
+              <span class="badge badge-orange">PCB Design</span>
+            </div>
+          </div>
+          <h3 class="card-title">Boutique Guitar Pedal Design</h3>
+          <p class="card-desc">Reverse-engineered 2 commercial pedals + designed 1 original. 100% SMD Altium PCBs validated on oscilloscope. Documented with full schematics and BOMs.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-label">Pedals</span><span class="spec-val">3 total</span></div>
+            <div class="spec"><span class="spec-label">Parts</span><span class="spec-val">100% SMD</span></div>
+            <div class="spec"><span class="spec-label">Tool</span><span class="spec-val">Altium Designer</span></div>
+          </div>
+          <button class="card-btn" onclick="openProject('pedal')">View Details →</button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">02 / Experience</span>
+        <h2 class="section-title">Where I've Worked</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Data Acquisition Team Lead</h3>
+                <div class="timeline-org">🏎️ McMaster Baja Racing · Hamilton, ON</div>
+              </div>
+              <span class="timeline-date">Aug 2025 – Present</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Leading <strong>10+ students</strong> in DAQ and sensor systems for a Baja SAE off-road vehicle</li>
+              <li>Designed & assembled test bench PCB in Altium for CVT RPM sensor proofing</li>
+              <li>Built custom steering torque sensor — full-bridge strain gauge + MCP6002 amp PCB, calibrated to <strong>1 mV/ft·lb</strong></li>
+              <li>Maintained electrical safety systems: kill switches and brake-light circuits</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Altium Designer</span><span class="tag">Analog</span><span class="tag">PCB</span><span class="tag">Team Lead</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Network Technology Intern</h3>
+                <div class="timeline-org">📶 Bell Canada · Toronto, ON</div>
+              </div>
+              <span class="timeline-date">May – Aug 2025</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>Managed operations and performance of <strong>300+ cellular sites</strong> including emergency services</li>
+              <li>Diagnosed and resolved <strong>12+ network outages</strong> with field technicians in real time</li>
+              <li>Built Python automation tools integrating proprietary monitoring software APIs</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag">Python</span><span class="tag">Networking</span><span class="tag">Automation</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">03 / Skills</span>
+        <h2 class="section-title">Tools & Technologies</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">
+            <span class="skill-group-icon">🔧</span> PCB & Hardware
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><div class="skill-bar" style="--w:95%"></div><span>Altium Designer</span></div>
+            <div class="skill-item"><div class="skill-bar" style="--w:85%"></div><span>Analog Circuit Design</span></div>
+            <div class="skill-item"><div class="skill-bar" style="--w:80%"></div><span>Sensor Calibration</span></div>
+            <div class="skill-item"><div class="skill-bar" style="--w:75%"></div><span>Signal Conditioning</span></div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">
+            <span class="skill-group-icon">💻</span> Embedded & Software
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><div class="skill-bar" style="--w:90%"></div><span>C / C++</span></div>
+            <div class="skill-item"><div class="skill-bar" style="--w:85%"></div><span>Python</span></div>
+            <div class="skill-item"><div class="skill-bar" style="--w:80%"></div><span>MATLAB</span></div>
+            <div class="skill-item"><div class="skill-bar" style="--w:75%"></div><span>UART / SPI / I²C / BLE</span></div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">
+            <span class="skill-group-icon">🧰</span> CAD & Tooling
+          </div>
+          <div class="skill-items">
+            <div class="skill-item"><div class="skill-bar" style="--w:80%"></div><span>SolidWorks</span></div>
+            <div class="skill-item"><div class="skill-bar" style="--w:75%"></div><span>Autodesk Inventor</span></div>
+            <div class="skill-item"><div class="skill-bar" style="--w:70%"></div><span>Oscilloscope / DMM</span></div>
+            <div class="skill-item"><div class="skill-bar" style="--w:65%"></div><span>Git / GitHub</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-text">
+          <span class="section-tag">04 / Contact</span>
+          <h2 class="contact-title">Let's build something.</h2>
+          <p class="contact-sub">Open to Summer 2026 internships in automotive, mobility, and embedded systems. Based in Hamilton, ON — open to relocate.</p>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:leah.sharma@hotmail.com" class="contact-link">
+            <span class="contact-link-icon">📧</span>
+            <div><div class="contact-link-label">Email</div><div class="contact-link-val">leah.sharma@hotmail.com</div></div>
+          </a>
+          <a href="https://linkedin.com/in/leah-sharma-a7246b273/" target="_blank" class="contact-link">
+            <span class="contact-link-icon">🔗</span>
+            <div><div class="contact-link-label">LinkedIn</div><div class="contact-link-val">linkedin.com/in/leah-sharma-a7246b273/</div></div>
+          </a>
+          <a href="https://github.com/leelrs" target="_blank" class="contact-link">
+            <span class="contact-link-icon">🐙</span>
+            <div><div class="contact-link-label">GitHub</div><div class="contact-link-val">github.com/leelrs</div></div>
+          </a>
+          <a href="leah_sharma_resume.pdf" target="_blank" class="contact-link">
+            <span class="contact-link-icon">📄</span>
+            <div><div class="contact-link-label">Resume</div><div class="contact-link-val">Download PDF</div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeProject()"></div>
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeProject()">✕</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
