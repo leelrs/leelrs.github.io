@@ -16,7 +16,7 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">⚡ <span>Leah Sharma</span></a>
+      <a href="#" class="nav-logo">⚡ <span>LS</span></a>
       <div class="nav-links">
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
@@ -38,10 +38,10 @@
       <div class="hero-tag">⚡ Available for Summer 2026</div>
       <h1 class="hero-title">
         <span class="line1">Leah Sharma</span>
-        <span class="line2">Electrical <em>Engineer</em></span>
+        <span class="line2">EE <em>Student</em></span>
       </h1>
       <p class="hero-sub">
-        Building <strong>sensors, PCBs, and embedded systems</strong> for vehicles that move.<br/>
+        Building <strong>sensors, PCBs, and embedded systems</strong> for things that move.<br/>
         McMaster University · Class of 2027
       </p>
       <div class="hero-chips">
@@ -81,7 +81,7 @@
             </div>
           </div>
           <h3 class="card-title">ESP32 BLE RC Car</h3>
-          <p class="card-desc">Custom PCB with ESP32, DRV8847 dual H-bridge, linear servo steering, DC drive motor, and LiPo power. Fully custom BLE firmware — no off-the-shelf RC electronics.</p>
+          <p class="card-desc">Custom PCB with ESP32, DRV8847 dual H-bridge, linear servo steering, DC drive motor, and LiPo power. Fully custom BLE firmware; no off-the-shelf RC electronics.</p>
           <div class="card-specs">
             <div class="spec"><span class="spec-label">MCU</span><span class="spec-val">ESP32</span></div>
             <div class="spec"><span class="spec-label">Driver</span><span class="spec-val">DRV8847</span></div>
@@ -91,6 +91,26 @@
           <button class="card-btn" onclick="openProject('rccar')">View Details →</button>
         </article>
 
+        <!-- Baja SAE: Modular Motherboard -->
+        <article class="project-card" data-project="pcb">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-icon">🔌</div>
+            <div class="card-badges">
+              <span class="badge badge-green">PCB Design</span>
+              <span class="badge badge-yellow">Hardware</span>
+            </div>
+          </div>
+          <h3 class="card-title">Modular Motherboard Redesign</h3>
+          <p class="card-desc">Redesigned the Baja SAE monolithic ECU into a modular platform with plug-in sensor modules and 3 regulated power rails. Sensor swaps from hours to minutes.</p>
+          <div class="card-specs">
+            <div class="spec"><span class="spec-label">MCU</span><span class="spec-val">Teensy</span></div>
+            <div class="spec"><span class="spec-label">Rails</span><span class="spec-val">12V / 5V / 3.3V</span></div>
+            <div class="spec"><span class="spec-label">Tool</span><span class="spec-val">Altium Designer</span></div>
+          </div>
+          <button class="card-btn" onclick="openProject('pcb')">View Details →</button>
+        </article>
+        
         <!-- Torque Sensor -->
         <article class="project-card" data-project="torque">
           <div class="card-glow"></div>
@@ -111,25 +131,6 @@
           <button class="card-btn" onclick="openProject('torque')">View Details →</button>
         </article>
 
-        <!-- Modular Motherboard -->
-        <article class="project-card" data-project="pcb">
-          <div class="card-glow"></div>
-          <div class="card-header">
-            <div class="card-icon">🔌</div>
-            <div class="card-badges">
-              <span class="badge badge-green">PCB Design</span>
-              <span class="badge badge-yellow">Hardware</span>
-            </div>
-          </div>
-          <h3 class="card-title">Modular Motherboard Redesign</h3>
-          <p class="card-desc">Redesigned the Baja SAE monolithic ECU into a modular platform with plug-in sensor modules and 3 regulated power rails. Sensor swaps from hours to minutes.</p>
-          <div class="card-specs">
-            <div class="spec"><span class="spec-label">MCU</span><span class="spec-val">Teensy</span></div>
-            <div class="spec"><span class="spec-label">Rails</span><span class="spec-val">12V / 5V / 3.3V</span></div>
-            <div class="spec"><span class="spec-label">Tool</span><span class="spec-val">Altium Designer</span></div>
-          </div>
-          <button class="card-btn" onclick="openProject('pcb')">View Details →</button>
-        </article>
 
         <!-- 3D Scanner -->
         <article class="project-card" data-project="scanner">
@@ -162,7 +163,7 @@
             </div>
           </div>
           <h3 class="card-title">Boutique Guitar Pedal Design</h3>
-          <p class="card-desc">Reverse-engineered 2 commercial pedals + designed 1 original. 100% SMD Altium PCBs validated on oscilloscope. Documented with full schematics and BOMs.</p>
+          <p class="card-desc">Reverse-engineered 2 commercial pedals + designed 1 original. 100% SMD Altium PCBs validated on an oscilloscope. Documented with full schematics and BOMs.</p>
           <div class="card-specs">
             <div class="spec"><span class="spec-label">Pedals</span><span class="spec-val">3 total</span></div>
             <div class="spec"><span class="spec-label">Parts</span><span class="spec-val">100% SMD</span></div>
